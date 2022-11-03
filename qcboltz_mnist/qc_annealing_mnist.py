@@ -15,12 +15,12 @@ T = 5
 for cMod in range(3):
     for cTrial in range(5):
 
+      if cMod==0:
+        fname = "/workspace/simple-ocean-programs/qcboltz_mnist/params/params_qboltz_" + str(cTrial+1) + ".csv"
       if cMod==1:
-        fname = "/workspace/simple-ocean-programs/qcboltz_mnist/params/params_qboltz_" + str(cTrial) + ".csv"
+        fname = "/workspace/simple-ocean-programs/qcboltz_mnist/params/params_hqboltz_" + str(cTrial+1) + ".csv"
       if cMod==2:
-        fname = "/workspace/simple-ocean-programs/qcboltz_mnist/params/params_hqboltz_" + str(cTrial) + ".csv"
-      if cMod==3:
-        fname = "/workspace/simple-ocean-programs/qcboltz_mnist/params/params_hqboltz_aux_" + str(cTrial) + ".csv"
+        fname = "/workspace/simple-ocean-programs/qcboltz_mnist/params/params_hqboltz_aux_" + str(cTrial+1) + ".csv"
 
       params = np.loadtxt(open(fname, "rb"), delimiter=",", skiprows=0)
 
@@ -79,6 +79,6 @@ for cMod in range(3):
 
         df = sampleset.to_pandas_dataframe()
         #print(df)
-        fout = "/workspace/simple-ocean-programs/qcboltz_mnist/samples/samples_qboltz_" + str(cTrial) + "_" + str(n) + ".csv"
+        fout = "/workspace/simple-ocean-programs/qcboltz_mnist/samples/samples_qboltz_" + str(cTrial+1) + "_" + str(n+1) + ".csv"
         df.to_csv(fout)
 
