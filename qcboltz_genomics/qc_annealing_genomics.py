@@ -29,7 +29,7 @@ for cMod in range(3):
         s_star = params[0,n]
         h = {}
         for i in range(d):
-            h[i] = params[1+i,n]*T/2
+            #h[i] = params[1+i,n]*T/2
             h[i] = params[1+i,n]
         gamma = {}
         for i in range(d):
@@ -38,7 +38,7 @@ for cMod in range(3):
         c = 0
         for i in range(d):
             for j in range(i+1,d):
-                J[(i,j)] = params[1+(d*2)+c,n]*T
+                #J[(i,j)] = params[1+(d*2)+c,n]*T
                 J[(i,j)] = params[1+(d*2)+c,n]*2
                 c = c + 1
 
