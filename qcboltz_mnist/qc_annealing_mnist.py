@@ -29,7 +29,7 @@ for cMod in range(3):
         s_star = params[0,n]
         h = {}
         for i in range(d):
-            h[i] = params[1+i,n]*T/2
+            #h[i] = params[1+i,n]*T/2
             h[i] = params[1+i,n]
         gamma = {}
         for i in range(d):
@@ -38,7 +38,7 @@ for cMod in range(3):
         c = 0
         for i in range(d):
             for j in range(i+1,d):
-                J[(i,j)] = params[1+(d*2)+c,n]*T
+                #J[(i,j)] = params[1+(d*2)+c,n]*T
                 J[(i,j)] = params[1+(d*2)+c,n]*2
                 c = c + 1
 
@@ -79,6 +79,11 @@ for cMod in range(3):
 
         df = sampleset.to_pandas_dataframe()
         #print(df)
-        fout = "/workspace/simple-ocean-programs/qcboltz_mnist/samples/samples_qboltz_" + str(cTrial+1) + "_" + str(n+1) + ".csv"
+        if cMod==0:        
+          fout = "/workspace/simple-ocean-programs/qcboltz_mnist/samples/samples_qboltz_" + str(cTrial+1) + "_" + str(n+1) + ".csv"
+        if cMod==1:        
+          fout = "/workspace/simple-ocean-programs/qcboltz_mnist/samples/samples_hqboltz_" + str(cTrial+1) + "_" + str(n+1) + ".csv"
+        if cMod==2:        
+          fout = "/workspace/simple-ocean-programs/qcboltz_mnist/samples/samples_hqboltz_aux_" + str(cTrial+1) + "_" + str(n+1) + ".csv"        
         df.to_csv(fout)
 
