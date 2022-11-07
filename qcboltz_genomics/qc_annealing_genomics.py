@@ -79,6 +79,11 @@ for cMod in range(3):
 
         df = sampleset.to_pandas_dataframe()
         #print(df)
-        fout = "/workspace/simple-ocean-programs/qcboltz_genomics/samples/samples_qboltz_" + str(cTrial+1) + "_" + str(n+1) + ".csv"
+        if cMod==0:        
+          fout = "/workspace/simple-ocean-programs/qcboltz_genomics/samples/samples_qboltz_" + str(cTrial+1) + "_" + str(n+1) + ".csv"
+        if cMod==1:        
+          fout = "/workspace/simple-ocean-programs/qcboltz_genomics/samples/samples_hqboltz_" + str(cTrial+1) + "_" + str(n+1) + ".csv"
+        if cMod==2:        
+          fout = "/workspace/simple-ocean-programs/qcboltz_genomics/samples/samples_hqboltz_aux_" + str(cTrial+1) + "_" + str(n+1) + ".csv"        
         df.to_csv(fout)
 
