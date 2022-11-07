@@ -72,7 +72,7 @@ for cMod in range(3):
                     offset[embedding[i][j]] = val
 
 
-        sampleset = sampler.sample_ising(h, J, num_reads=1000)
+        sampleset = sampler.sample_ising(h, J, num_reads=1000, beta=0.001)
 
         mat = dimod.as_samples(sampleset)
         mat = mat[0]
